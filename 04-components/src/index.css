@@ -1,0 +1,18 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  padding: 30px;
+  margin: 60px;
+  background-color: pink;
+  border-radius: 10px;
+}
+
+.navbar {
+  padding: 20px;
+  margin: 60px;
+  background-color: red;
+  border-radius: 10px;
+}
