@@ -69,3 +69,45 @@ function sum(...numbers) {
 
 console.log(sum(1, 2, 3))
 console.log(sum(4, 5, 6, 7))
+
+
+// map, filter, find, some, every, includes, indexof, findIndex
+
+// map method
+const personArray = [
+    { name: 'Pratappadhy', age: 25, country: 'INDIA' },
+    { name: 'Padhy', age: 30, country: 'RUSSIA' },
+    { name: 'Prata', age: 40, country: 'USA' },
+    { name: 'Prata', age: 40, country: 'USA' },
+]
+
+const countryArray = personArray.map(person => person.country)
+console.log(countryArray)
+
+//Find
+const personWithAge30 = personArray.find(person => person.age === 30)
+console.log(personWithAge30)
+
+//Filter
+const peopleFromIndia = personArray.filter(person => person.country === 'USA')
+console.log(peopleFromIndia)
+
+//Some
+const hasPersonOver30 = personArray.some(person => person.age > 30)
+console.log(hasPersonOver30)
+
+//Every
+const allPeopleAreOver30 = personArray.every(person => person.age > 30)
+console.log(allPeopleAreOver30)
+
+//Includes
+const hasPrata = countryArray.includes('USA')
+console.log(hasPrata)
+
+//IndexOf
+const indexOfPrata = countryArray.indexOf('USA')
+console.log(indexOfPrata)
+
+//FindIndex
+const indexOfPratappadhy = personArray.findIndex(person => person.name === 'Pratappadhy')
+console.log(indexOfPratappadhy)
