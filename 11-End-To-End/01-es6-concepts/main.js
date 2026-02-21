@@ -111,3 +111,46 @@ console.log(indexOfPrata)
 //FindIndex
 const indexOfPratappadhy = personArray.findIndex(person => person.name === 'Pratappadhy')
 console.log(indexOfPratappadhy)
+
+let listOfProducts = document.querySelector('.list-of-products')
+
+function renderProducts(products) {
+    listOfProducts.innerHTML = ''
+    products.forEach(product => {
+        listOfProducts.innerHTML += `
+            <div class="product">
+                <img src="${product.image}" alt="${product.title}">
+                <h2>${product.title}</h2>
+                <p>${product.description}</p>
+                <span>$${product.price}</span>
+            </div>
+        `
+    })
+}
+
+async function fetchProducts() {
+    try {
+        const response = await fetch('https://fakestoreapi.com/products', {
+            method: 'GET'
+        })
+
+        if (!response.ok) {
+            console.log('HTTP error:', response.status)
+            return
+        }
+
+        const data = await response.json()
+        console.log(data)
+        if (data.length > 0) {
+            renderProducts(data)
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    listOfProducts = document.querySelector('.list-of-products')
+    fetchProducts()
+})
