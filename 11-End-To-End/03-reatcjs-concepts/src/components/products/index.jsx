@@ -25,9 +25,11 @@ function ProductList() {
     return (
         <div>
             <h3>ECommerce Project</h3>
-            <ProductItem product={dummyProductData[0]} />
-            <ProductItem product={dummyProductData[1]} />
-            <ProductItem product={dummyProductData[2]} />
+            {
+                dummyProductData.map((product, index) => (
+                    <ProductItem key={index} product={product} />
+                ))
+            }
         </div>
     )
 }
