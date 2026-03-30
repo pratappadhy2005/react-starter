@@ -1,4 +1,5 @@
 import ProductItem from './components/product-item.jsx'
+import "./style.css"
 
 function ProductList(props) {
     return (
