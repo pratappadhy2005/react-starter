@@ -28,9 +28,9 @@ function App() {
   return (
     <div className="App">
       <h1>React JS Concepts 2026</h1>
-      {/* <ClassBasedComponent />
-      <FunctionalComponent /> */}
-      <ProductList dummyProductData={dummyProductData} />
+      <ClassBasedComponent />
+      {/* <FunctionalComponent /> */}
+      {/* <ProductList dummyProductData={dummyProductData} /> */}
     </div>
   )
 }
