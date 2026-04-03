@@ -1,21 +1,19 @@
 import ProductItem from './components/product-item.jsx'
 import "./style.css"
+import { useState } from 'react'
+
+const initiaState = false;
 
 function ProductList(props) {
 
-    const flag = true;
-
-    function renderTextBlock(getFlag) {
-        return getFlag ? <h4>Product List</h4> : <h4>No Product List</h4>
-    }
-
-    let textBlock = renderTextBlock(flag)
+    const [flag, setFlag] = useState(initiaState)
 
     return (
         <div>
             <h3>ECommerce Project</h3>
+            <button onClick={() => setFlag(!flag)}>Click me</button>
             {
-                textBlock
+                flag ? <h4>Product List</h4> : <h4>No Product List</h4>
             }
 
             {
