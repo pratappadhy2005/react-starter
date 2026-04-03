@@ -1,12 +1,17 @@
 import ProductItem from './components/product-item.jsx'
 import "./style.css"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const initiaState = false;
 
 function ProductList(props) {
 
     const [flag, setFlag] = useState(initiaState)
+
+    useEffect(() => {
+        //setFlag(!flag)
+        console.log('run only on page load', flag)
+    }, []) // This will run on component load
 
     return (
         <div>
