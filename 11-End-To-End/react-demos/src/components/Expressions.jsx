@@ -25,6 +25,9 @@ const Expressions = () => {
             <p>2*3={multiply(2, 3)}</p>
             <br />
             <p className={specialClass}>Special Class</p>
+            <div>
+                <h1></h1>
+            </div>
         </div>
     )
 }

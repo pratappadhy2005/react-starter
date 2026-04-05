@@ -1,13 +1,14 @@
-import Header from "./components/Header"
-import MainContent from "./components/MainContent"
-import Footer from "./components/Footer"
-import WelcomeMessage from "./components/WelcomeMessage"
-import JSXRules from "./components/JSXRules"
-import Expressions from "./components/Expressions"
+import Greeting from "./components/Greeting"
+import ProductInfo from "./components/ProductInfo"
+
+
 
 const App = () => {
   return (
-    <Expressions />
+    <div>
+      <Greeting />
+      <ProductInfo />
+    </div>
   )
 }
 
