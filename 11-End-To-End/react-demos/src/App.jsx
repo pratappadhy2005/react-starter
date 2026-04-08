@@ -5,20 +5,14 @@ import ProductList from "./components/ProductList"
 import OrderDetails from "./components/props/OrderDetails"
 import Parent from "./components/children/Parent"
 import Password from "./components/conditional/Password"
+import Cart from "./components/Cart"
 
 
 
 const App = () => {
   return (
     <div>
-      <Greeting />
-      <ProductInfo />
-      <UserList />
-      <ProductList />
-      <OrderDetails />
-      <Parent />
-      <Password isValid={true} />
-      <Password isValid={false} />
+      <Cart />
     </div>
   )
 }
