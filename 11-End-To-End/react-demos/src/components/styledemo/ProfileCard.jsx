@@ -13,7 +13,7 @@ const ProfileCard = () => {
         <div style={style}>
             <h1>Profile Card</h1>
             <p>Some content</p>
-            <FaBeer />
+            <FaBeer size={30} />
         </div>
     )
 }
