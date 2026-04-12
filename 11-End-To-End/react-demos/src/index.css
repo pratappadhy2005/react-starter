@@ -1,0 +1,9 @@
+* {
+    border: "1px solid red",
+    background-color: "lightblue"
+}
+
+.child {
+    border: "1px solid red",
+    background-color: "lightblue"
+}

@@ -24,3 +24,17 @@ const person: {
 }
 
 console.log(hello)
+
+//Arrays
+const numbers:number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const names: Array<string> = ["pratappadhy", "prashant", "pranav"]
+
+//Enums
+enum Color{
+    Red,
+    Green,
+    Blue
+}
+
+const theme:Color = Color.Red

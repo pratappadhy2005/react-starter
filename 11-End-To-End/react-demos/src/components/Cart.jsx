@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaCartArrowDown } from "react-icons/fa";
+
 
 const Cart = () => {
     const items = [
@@ -17,7 +19,7 @@ const Cart = () => {
     ]
     return (
         <div>
-            <h1> Cart Items </h1>
+            <h1 style={{ color: "red", backgroundColor: "lightblue" }}> Cart Items </h1>
             {items.length > 0 && <h2>Total Price: {items.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)}</h2>}
             {items.length > 0 && <ul>
                 {items.map((item) => (

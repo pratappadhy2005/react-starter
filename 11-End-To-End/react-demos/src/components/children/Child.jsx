@@ -1,8 +1,11 @@
 import React from 'react'
+import '../../index.css'
 
 const Child = ({ children }) => {
+
     return (
-        <div>
+        <div className="child">
+            <h1>Child content</h1>
             {children}
         </div>
     )

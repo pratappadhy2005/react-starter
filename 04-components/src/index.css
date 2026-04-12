@@ -7,12 +7,12 @@ html, body {
   padding: 30px;
   margin: 60px;
   background-color: pink;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .navbar {
-  padding: 20px;
+  padding: 30px;
   margin: 60px;
   background-color: red;
-  border-radius: 10px;
+  border-radius: 20px;
 }

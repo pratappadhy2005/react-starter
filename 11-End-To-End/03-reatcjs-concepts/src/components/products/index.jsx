@@ -7,11 +7,14 @@ const initiaState = false;
 function ProductList(props) {
 
     const [flag, setFlag] = useState(initiaState)
+    const [count, setCount] = useState(0)
+    const changeStyle = count > 10
 
     useEffect(() => {
         //setFlag(!flag)
         console.log('run only on page load', flag)
-    }, []) // This will run on component load
+        console.log('count changes', count)
+    }, [count, flag]) // This will run on component load
 
     return (
         <div>
@@ -20,6 +23,11 @@ function ProductList(props) {
             {
                 flag ? <h4>Product List</h4> : <h4>No Product List</h4>
             }
+
+            <div>
+                <button style={changeStyle ? { backgroundColor: 'red', color: 'white' } : undefined} onClick={() => setCount(count + 1)}>Increment</button>
+                <h4>Count: {count}</h4>
+            </div>
 
             {
                 props.dummyProductData.map((product, index) => (
