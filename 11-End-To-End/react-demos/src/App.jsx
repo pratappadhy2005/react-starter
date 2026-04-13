@@ -7,8 +7,6 @@ const App = () => {
   const [names, setNames] = useState(['Pratappadhy', 'Pratap', 'Padhy'])
   console.log(names);
 
-
-
   return (
     <div>
       <h1>Count: {count}</h1>
@@ -24,6 +22,8 @@ const App = () => {
       <button style={{ padding: '10px 20px' }} onClick={() => setNames([...names, 'Prayan'])}>Add Name</button>
       <br />
       <button style={{ padding: '10px 20px' }} onClick={() => setNames(names.filter((name) => name !== 'Pratap'))}>Remove Name</button>
+      <br />
+      <button style={{ padding: '10px 20px' }} onClick={() => setNames(names.map((name) => (name === 'Padhy' ? 'Prayan' : name)))}>Update One Friend</button>
     </div>
   )
 }
