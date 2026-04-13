@@ -22,6 +22,8 @@ const App = () => {
       }
 
       <button style={{ padding: '10px 20px' }} onClick={() => setNames([...names, 'Prayan'])}>Add Name</button>
+      <br />
+      <button style={{ padding: '10px 20px' }} onClick={() => setNames(names.filter((name) => name !== 'Pratap'))}>Remove Name</button>
     </div>
   )
 }
