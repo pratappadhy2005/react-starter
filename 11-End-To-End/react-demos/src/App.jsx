@@ -5,6 +5,7 @@ import { useState } from "react"
 import ExampleOne from "./components/hooks/usestate/ExampleOne"
 import ExampleTwo from "./components/hooks/usestate/ExampleTwo"
 import ExampleTHree from "./components/hooks/usestate/ExampleTHree"
+import Counter from "./components/hooks/usestate/excercise/Counter"
 
 const App = () => {
   const [counter, setCounter] = useState(0)
@@ -16,6 +17,7 @@ const App = () => {
       <ExampleOne />
       <ExampleTwo />
       <ExampleTHree />
+      <Counter />
     </section>
   )
 }
