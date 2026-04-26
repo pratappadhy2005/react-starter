@@ -6,11 +6,13 @@ import ExampleOne from "./components/hooks/usestate/ExampleOne"
 import ExampleTwo from "./components/hooks/usestate/ExampleTwo"
 import ExampleTHree from "./components/hooks/usestate/ExampleTHree"
 import Counter from "./components/hooks/usestate/excercise/Counter"
+import Switcher from "./components/switcher/Switcher"
+import UseEffectDemo from "./components/hooks/useeffect/UseEffectDemo"
 
 const App = () => {
   return (
     <section>
-      <CopyInput />
+      <UseEffectDemo />
     </section>
   )
 }
