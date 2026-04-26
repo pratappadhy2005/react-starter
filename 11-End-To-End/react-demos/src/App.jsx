@@ -8,11 +8,12 @@ import ExampleTHree from "./components/hooks/usestate/ExampleTHree"
 import Counter from "./components/hooks/usestate/excercise/Counter"
 import Switcher from "./components/switcher/Switcher"
 import UseEffectDemo from "./components/hooks/useeffect/UseEffectDemo"
+import UseEffectDataFetchDemo from "./components/hooks/useeffect/UseEffectDataFetchDemo"
 
 const App = () => {
   return (
     <section>
-      <UseEffectDemo />
+      <UseEffectDataFetchDemo />
     </section>
   )
 }
