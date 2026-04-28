@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react'
+import TodoList from './components/TodoList'
 
 function Greeting({ name, age }) {
   return (
@@ -9,16 +10,15 @@ function Greeting({ name, age }) {
   )
 }
 function App() {
-  const [showGreeting, setShowGreeting] = useState(true);
-  function toggleShowGreeting() {
-    showGreeting ? setShowGreeting(false) : setShowGreeting(true)
+  const [name, setName] = useState('');
+  function handleChange(e) {
+    setName(e.target.value);
   }
   return (
     <div>
-      <button onClick={toggleShowGreeting}>Click Me</button>
-      {
-        showGreeting && <Greeting name="Prayan" age="30" />
-      }
+      <input onChange={handleChange} type="text" placeholder="Enter your name" />
+      <Greeting name={name} age="30" />
+      <TodoList />
     </div>
   )
 }
