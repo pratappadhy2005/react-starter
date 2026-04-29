@@ -1,6 +1,5 @@
 import './App.css'
-import { useState } from 'react'
-import TodoList from './components/TodoList'
+import SignUpForm from './components/SignUpForm'
 
 function Greeting({ name, age }) {
   return (
@@ -10,15 +9,9 @@ function Greeting({ name, age }) {
   )
 }
 function App() {
-  const [name, setName] = useState('');
-  function handleChange(e) {
-    setName(e.target.value);
-  }
   return (
     <div>
-      <input onChange={handleChange} type="text" placeholder="Enter your name" />
-      <Greeting name={name} age="30" />
-      <TodoList />
+      <SignUpForm />
     </div>
   )
 }
