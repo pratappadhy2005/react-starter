@@ -1,36 +1,65 @@
 import './App.css'
-import SignUpForm from './components/SignUpForm'
-import { Route, Routes, Link } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import { useState } from 'react'
+import AuthContext from './components/AuthContext'
+import { useContext } from 'react'
 
-function Greeting({ name, age }) {
+function Profile() {
+  const { user } = useContext(AuthContext)
   return (
-    <div>
-      <h1>Hello React, I am {name} and I am {age} years old.</h1>
-    </div>
+    <section className="page">
+      <h1>Profile</h1>
+      <p className="profile-tag">Name: {user.name}</p>
+      <p>Here you could show more user info from the context.</p>
+    </section>
+  )
+}
+
+function Login() {
+  const [name, setName] = useState('')
+  const { user, setUser } = useContext(AuthContext)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!name.trim()) {
+      return;
+    }
+    setUser({ name, isAuthenticated: true })
+  }
+
+  return (
+    <section className="page">
+      <h1>Login</h1>
+      <p>Sign in to access your account.</p>
+
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" name="username" onChange={(e) => setName(e.target.value)} />
+        <button type="submit">Login</button>
+      </form>
+      <p>Authenticated: {user.isAuthenticated ? 'Yes' : 'No'}</p>
+    </section>
   )
 }
 
 function Home() {
+  const { user } = useContext(AuthContext)
   return (
-    <div>
+    <section className="page">
       <h1>Home</h1>
-    </div>
+      User is Authenticated: {user.isAuthenticated ? 'Yes' : 'No'}
+      <p>Welcome to the home page. {user.name}</p>
+    </section>
   )
 }
 
 function About() {
   return (
-    <div>
+    <section className="page">
       <h1>About</h1>
-    </div>
-  )
-}
-
-function NotFound() {
-  return (
-    <div>
-      <h1>404</h1>
-    </div>
+      <p>This page can describe your app.</p>
+    </section>
   )
 }
 
@@ -43,19 +72,28 @@ function Footer() {
 }
 
 function App() {
+  const [user, setUser] = useState({ name: '', isAuthenticated: false })
+
+  function handleLogin() {
+    setUser({ name: 'Pratappadhy', isAuthenticated: true })
+  }
+
+  function handleLogout() {
+    setUser({ name: '', isAuthenticated: false })
+  }
+
   return (
-    <div>
-      <nav style={{ display: 'flex', justifyContent: 'center' }}>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
+    <div className="app-shell">
+      <Navbar />
+      <AuthContext.Provider value={{ user, setUser, handleLogin, handleLogout }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<section className="page"><h1>404</h1></section>} />
+        </Routes>
+      </AuthContext.Provider>
       <div>
         <Footer />
       </div>
