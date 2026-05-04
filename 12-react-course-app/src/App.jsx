@@ -4,6 +4,8 @@ import Navbar from './components/Navbar'
 import { useState } from 'react'
 import AuthContext from './components/AuthContext'
 import { useContext } from 'react'
+import UseEffect from './components/sideeffects/UseEffect'
+import FetchUserData from './components/sideeffects/FetchUserData'
 
 function Profile() {
   const { user } = useContext(AuthContext)
@@ -83,20 +85,8 @@ function App() {
   }
 
   return (
-    <div className="app-shell">
-      <Navbar />
-      <AuthContext.Provider value={{ user, setUser, handleLogin, handleLogout }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/*" element={<section className="page"><h1>404</h1></section>} />
-        </Routes>
-      </AuthContext.Provider>
-      <div>
-        <Footer />
-      </div>
+    <div>
+      <FetchUserData />
     </div>
   )
 }
